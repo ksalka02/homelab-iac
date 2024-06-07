@@ -8,17 +8,26 @@ terraform {
     # profile = "main"
   }
 
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.17.0"
+      version = ">= 0" # "hashicorp/aws" (latest)
     }
-    # http = {
-    #   source  = "hashicorp/http"
-    #   version = "3.4.0"
-    # }
   }
 }
+
+#   required_providers {
+#     aws = {
+#       source  = "hashicorp/aws"
+#       version = "5.17.0"
+#     }
+#     # http = {
+#     #   source  = "hashicorp/http"
+#     #   version = "3.4.0"
+#     # }
+#   }
+# }
 
 provider "aws" {
   region = "us-east-1"

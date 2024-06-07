@@ -1,0 +1,255 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "nba-player-guesser-api",
+    "description": "Amazon API Gateway for Nba player guesser game",
+    "version": "2023-10-01T02:22:31Z"
+  },
+  "paths": {
+    "/player/generate": {
+      "get": {
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-request-validator": "Validate body, query string parameters, and headers",
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "${vpc_link}",
+          "httpMethod": "GET",
+          "uri": "http://${LB_DNS}:$${stageVariables.PORT}/player/generate",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/player/guess": {
+      "get": {
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-request-validator": "Validate body, query string parameters, and headers",
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "${vpc_link}",
+          "httpMethod": "GET",
+          "uri": "http://${LB_DNS}:$${stageVariables.PORT}/player/guess",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/user/score": {
+      "get": {
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-request-validator": "Validate body, query string parameters, and headers",
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "${vpc_link}",
+          "httpMethod": "GET",
+          "uri": "http://${LB_DNS}:$${stageVariables.PORT}/user/score",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/user/update": {
+      "put": {
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-request-validator": "Validate body, query string parameters, and headers",
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "${vpc_link}",
+          "httpMethod": "PUT",
+          "uri": "http://${LB_DNS}:$${stageVariables.PORT}/user/update",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    },
+    "/user/delete": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-request-validator": "Validate body, query string parameters, and headers",
+        "x-amazon-apigateway-integration": {
+          "type": "http_proxy",
+          "connectionId": "${vpc_link}",
+          "httpMethod": "DELETE",
+          "uri": "http://${LB_DNS}:$${stageVariables.PORT}/user/delete",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "connectionType": "VPC_LINK"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Empty": {
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "x-api-key",
+        "in": "header"
+      }
+    }
+  },
+  "x-amazon-apigateway-request-validators": {
+    "Validate body, query string parameters, and headers": {
+      "validateRequestParameters": true,
+      "validateRequestBody": true
+    }
+  }
+}

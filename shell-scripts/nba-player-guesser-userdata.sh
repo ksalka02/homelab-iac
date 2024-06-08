@@ -61,3 +61,4 @@ echo "###################################  RUN DOCKER COMPOSE  #################
 # docker-compose up
 PORT=$ud_PORT docker-compose up
 # PORT=$env_PORT docker-compose ps -a
+#test

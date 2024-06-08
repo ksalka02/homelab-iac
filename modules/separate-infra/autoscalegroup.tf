@@ -47,13 +47,13 @@ resource "aws_autoscaling_group" "api_asg_dev" {
   }
   tag {
     key                 = "Name"
-    value               = "${var.app_name}-asg-dev"
+    value               = "${var.app_name}-dev"
     propagate_at_launch = true
   }
 }
 
 resource "aws_autoscaling_attachment" "lb_asg_attachment_dev" {
-  autoscaling_group_name = aws_autoscaling_group.api_asg_dev.arn
+  autoscaling_group_name = aws_autoscaling_group.api_asg_dev.id
   lb_target_group_arn    = aws_lb_target_group.api_tg_dev.arn
 }
 
@@ -95,7 +95,7 @@ resource "aws_autoscaling_group" "api_asg_prod" {
   }
   tag {
     key                 = "Name"
-    value               = "${var.app_name}-asg-prod"
+    value               = "${var.app_name}-prod"
     propagate_at_launch = true
   }
 }

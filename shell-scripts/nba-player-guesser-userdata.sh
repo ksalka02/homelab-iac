@@ -51,6 +51,11 @@ docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 93936585
 export ud_PORT="${port}"
 # for bash variable use on yaml:
 # envsubst < docker-compose.yml
+echo "###################################"
+echo "###################################"
+echo "$ud_port"
+echo "###################################"
+echo "###################################"
 
 echo "###################################  RUN DOCKER COMPOSE  #############################"
 # docker-compose up

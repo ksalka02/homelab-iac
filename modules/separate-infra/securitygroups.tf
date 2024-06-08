@@ -1,6 +1,6 @@
 resource "aws_security_group" "api_dev_sg" {
-  name        = "api-dev-sg"
-  description = "SG for dev stage of api"
+  name        = "${var.app_name}-dev-sg"
+  description = "SG for development stage of ${var.app_name}"
   # vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -40,8 +40,8 @@ resource "aws_security_group" "api_dev_sg" {
 
 
 resource "aws_security_group" "api_prod_sg" {
-  name        = "api-prod-sg"
-  description = "SG for dev stage of api"
+  name        = "${var.app_name}-prod-sg"
+  description = "SG for production stage of ${var.app_name}"
   # vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -85,8 +85,8 @@ resource "aws_security_group" "api_prod_sg" {
 # }http://ipv4.icanhazip.com
 
 resource "aws_security_group" "api_lb_sg" {
-  name        = "api-lb-sg"
-  description = "security group for my access"
+  name        = "${var.app_name}-lb-sg"
+  description = "security group for my access through ${var.app_name} load balancer"
   # vpc_id      = aws_vpc.main.id
 
   ingress {

@@ -20,7 +20,9 @@ Content-Disposition: attachment; filename="userdata.txt"
 yum -y update
 
 echo "###################################  grabbing docker-compose file from S3 bucket  #############################"
-aws s3api get-object --bucket homelab-applications --key nba-player-guesser/docker-compose.yml docker-compose.yml
+mkdir docker
+# aws s3api get-object --bucket homelab-applications --key nba-player-guesser/docker-compose.yml docker-compose.yml
+aws s3api get-object --bucket homelab-applications --key nba-player-guesser/docker-compose.yml ./docker/docker-compose.yml
 
 echo "###################################  install docker & docker-compose  #############################"
 yum -y install docker
@@ -47,7 +49,7 @@ docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 93936585
 
 # docker run --name nba-playersapicontainer -e PORT -p ${port}:${port} 939365853055.dkr.ecr.us-east-1.amazonaws.com/nba-player-guesser-api
 # docker ps
-
+cd docker
 export ud_PORT="${port}"
 # for bash variable use on yaml:
 # envsubst < docker-compose.yml
@@ -58,6 +60,7 @@ echo "###################################"
 echo "###################################"
 
 echo "###################################  RUN DOCKER COMPOSE  #############################"
+
 # docker-compose up
 PORT=$ud_PORT docker-compose up
 PORT=$ud_PORT docker-compose ps

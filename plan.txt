@@ -1,0 +1,3 @@
+1. use docker compose to run all the containers and make them open to each other (app + redis containers)
+2. upload the yaml file for the docker composer to s3
+3. fetch the yaml file from s3 in user_data file in terraform

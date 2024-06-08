@@ -13,7 +13,7 @@ resource "aws_api_gateway_vpc_link" "vpc_link" {
 
 # api key ################################################################################################
 resource "aws_api_gateway_api_key" "mykey" {
-  name = "mykey"
+  name = "${var.app_name}-key"
 }
 
 resource "aws_api_gateway_usage_plan_key" "main" {

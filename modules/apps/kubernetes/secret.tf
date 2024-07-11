@@ -1,0 +1,30 @@
+# resource "kubernetes_secret" "aws_secret" {
+#   metadata {
+#     name = "aws-secret"
+#   }
+
+#   data = {
+#     AWS_ACCESS_KEY_ID     = "QUtJQTVWTlVSTTU3UUhXQ0s2TlI="
+#     AWS_SECRET_ACCESS_KEY = ""
+#   }
+# }
+
+# resource "kubernetes_secret" "ecr_key" {
+#   metadata {
+#     name = "ecr-key"
+#   }
+
+#   type = "kubernetes.io/dockerconfigjson"
+
+#   data = {
+#     ".dockerconfigjson" = jsonencode({
+#       auths = {
+#         "https://939365853055.dkr.ecr.us-east-1.amazonaws.com" = {
+#           "username" = "AWS"
+#           "password" = "eyJwYXlsb2FkIjoia0Z2Ry9lb0FHTnp4TnJNZTgyZkRNZ2VieUc4N1ExV1RXZE52aDg0cWlnV0NqOUFlQ2xkOU9QOWgzdzV3ckpYQ01aNjdUb255aFZ5WFQ5anR3QnE4RkRRTGlwR015SkYwOEt5Z3p3UDdzU3NoK1A0cHNLdTFSZzgyTjByelp1OEo0NlRtM2ZkOXZ4d2NLVnJ6c3d4QzVVZlVTdmtPZ2lRZDVkcHF6TGpPMGVKcjRiMTFXUVJHZHRGam9vTUJmbFJUa0F4Vkc5VWwvVUZaYTdnNDR5UmtlZWVSTGNLeVBTWjVTOUZYVmZCejJvUmdjSTZRTWxsbVVxSU4zUzg2c1kxam11VVJEWTFrU0JyWk5rUjR5UVIySW1XNWRxRFl5eFNMdVdwUjRtRWljTTNiamZmbVVsWGs3ZUNlQThNdEpxcnArT2VUZmp6cDBlUzNTbk43RTVVcFdrYVRUVGdKK2lsZlVIMGtOdkkxaDNRbnU3Zlo3OGxESjMwVGNqOC8vOFNnL1hzaDFSNzdxSWVWTHRmbXRMNzNGYWVaaktRNi8rTVR6a0VBdi9DN2s2SE5LYk02NVU1WFg5M21IZFhaVzZZYTQyblRBb3RITXU3RU0yUGNLQnAwR2kycFVhblFPVXdHTjNxemdMK2ZHeFNaU0NGYkxjQzlkN09oVFpDaExNanA0TThPUEFFUGxMcmtCbWpEREhLWGxlRGtNR1UvZHlicEZNTWh0QjBYbk1nRDVHWUwwTE0xQVBpeTM2aHoyQzR1aUwvVHJBdFNZQ1ZCbmRYWlNzVHU3WnlVOXYyNTdtNCtKcmhUZDdiRXlQMWhLUVlnTTZKN1p5eDlnZmpkM3NoYjJGajZGL0F4YVB6MUtrQ0FjZVc5aHFDSC9Ld0lBcmd2ZENNQnpZZUhaTFFCTFdqbUtVU3k3YTZ3NjhqTTRIYzk2S3ZFTVpIQVl1OW5uZ3Nkc0J5azlqWGN1LzdlUHFjcmdOMGo5eS9TZXJNclFSOXo5TWtUb1pqdVJkaTNDd3Bsb3l1Z2tTMEdWb3dVTnhhekQ4NHhkcnUrQjZLb2RXN093U1V2eVloNTMrVVJSempZN1M5T3RLMHdEMmZQcTM3UE16UnZtNWQ2RFhjVlhJUmVsSHJwMU5JWnhmY0hZMEs4d0ZqNTdvSEUrSHh1NytQZk1MaTNxSVA2Tmt4Rkg3STRyU2FQRUJKbjUrQ1V6ZWpwYUpWM0ROVkpTNkVmaUlnbzJlK1JjT1NtMGRXa2k2QjFwZHV2WGdCVXdWUzVRellVRDJjNGhGRUhwWFhPQzRSSjM3cGpKQWh1bkJCNXh4ZnF6MHJGS1pleDJ3cVl0Rm5iaktXQVY4VVd4L29Xc0RPWmMyTm9jNDFHR1RFQnB3VU00ZHFZM2NDTGlobUlVYkUvamc9PSIsImRhdGFrZXkiOiJBUUVCQUhod20wWWFJU0plUnRKbTVuMUc2dXFlZWtYdW9YWFBlNVVGY2U5UnE4LzE0d0FBQUg0d2ZBWUpLb1pJaHZjTkFRY0dvRzh3YlFJQkFEQm9CZ2txaGtpRzl3MEJCd0V3SGdZSllJWklBV1VEQkFFdU1CRUVET2tOYW1ISlk4VWQycVNzUHdJQkVJQTdtVTgvalpoY0lnaHRWNzhKQkd3S3hGYmJxbkJRVzRFcHI2dFVGNU80WDdJbVo4T1YycVF5amlVcS9WYTAwT2VyZ0hsZ3RMaG1uZkdlZ2dZPSIsInZlcnNpb24iOiIyIiwidHlwZSI6IkRBVEFfS0VZIiwiZXhwaXJhdGlvbiI6MTcxMzUyOTgzMX0="
+#           # "auth"     = base64encode("${var.registry_username}:${var.registry_password}")
+#         }
+#       }
+#     })
+#   }
+# }

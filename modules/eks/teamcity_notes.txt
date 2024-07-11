@@ -1,0 +1,2 @@
+* Install eksctl in teamcity
+* update eksctl command to use an appropriate aws profile

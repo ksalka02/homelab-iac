@@ -35,6 +35,10 @@ chmod +x /usr/local/bin/docker-compose
 echo "###################################  start docker  #############################"
 systemctl start docker
 
+echo "###################################  give permission to users other than root on instance to use docker commands  #############################"
+# the command is: usermod -a -G <service name> <user name>
+usermod -a -G docker ec2-user
+
 echo "###################################  ECR AUTH #############################"
 docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 939365853055.dkr.ecr.us-east-1.amazonaws.com/nba-player-guesser-api
 
